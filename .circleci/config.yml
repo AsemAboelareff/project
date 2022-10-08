@@ -43,7 +43,8 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - run: return 1
-      - run: echo "It failed!!"
+      - run: 
+         echo "It failed!!"
          when: on_fail
  
 workflows:
