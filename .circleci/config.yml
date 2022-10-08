@@ -44,7 +44,7 @@ jobs:
     steps:
       - run: return 1
       - run: 
-         echo "It failed!!"
+         command: echo "It failed!!"
          when: on_fail
  
 workflows:
