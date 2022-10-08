@@ -38,7 +38,7 @@ jobs:
     steps:
       - print_pipeline_id
       
-   test_error:
+  test_error:
     docker:
       - image: circleci/node:13.8.0
     steps:
@@ -59,10 +59,3 @@ workflows:
       - print_output_file:
           requires:
             - save_hello_world_output
-     
-      
-            
-
-
-
-            
