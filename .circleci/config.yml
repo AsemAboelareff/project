@@ -37,6 +37,13 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - print_pipeline_id
+      
+   test_error:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run: return 1
+      - echo "It failed!!"
  
 workflows:
   test-env-vars:
@@ -46,6 +53,7 @@ workflows:
   welcome:
     # Run the welcome/run job in its own container
     jobs:
+      - test_error
       - print_pipeline
       - save_hello_world_output
       - print_output_file:
